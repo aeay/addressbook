@@ -33,18 +33,6 @@ public class AddressController {
 		return "addressbook";
 	}
 	
-	// REST service that returns all the books (JSON)
-	@RequestMapping(value="/addresses", method=RequestMethod.GET)
-	public @ResponseBody List<Address> addressListRest() {
-		return (List<Address>) repository.findAll();
-	}
-	
-	//REST service that return one book by id (JSON)
-	@RequestMapping(value="/address/{id}", method = RequestMethod.GET)
-	public @ResponseBody Address findAddressRest(@PathVariable("id") Long addressId) {
-		return repository.findOne(addressId);
-	}
-	
 	 @RequestMapping(value = "/add")
 	    public String addAddress(Model model){
 	    	model.addAttribute("address", new Address());
@@ -70,6 +58,18 @@ public class AddressController {
 		 	model.addAttribute("cities", crepository.findAll());
 		 	return "editaddress";
 	 }  
+	 
+	 // REST
+	 
+	@RequestMapping(value="/addresses", method=RequestMethod.GET)
+		public @ResponseBody List<Address> addressListRest() {
+			return (List<Address>) repository.findAll();
+		}
+		
+	@RequestMapping(value="/address/{id}", method = RequestMethod.GET)
+		public @ResponseBody Address findAddressRest(@PathVariable("id") Long addressId) {
+			return repository.findOne(addressId);
+		}
 	
 
 }

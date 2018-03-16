@@ -7,5 +7,7 @@ import org.springframework.data.repository.CrudRepository;
 public interface AddressRepository extends CrudRepository<Address, Long>{
 
 	List<Address> findByFirstName(String firstName);
+	
+	List<Address> findByLastName(String lastName);
 
 }

@@ -38,7 +38,16 @@ public class AddressBookApplication {
 			log.info("example addresses");
 			repository.save(new Address("Elli", "Esimerkki", "Koivukuja 5", "00123", crepository.findByName("Helsinki").get(0)));
 			repository.save(new Address("Matti", "Meikäläinen", "Vuoritie 2 C", "01234", crepository.findByName("Vantaa").get(0)));
-
+			repository.save(new Address("Minna", "Meikäläinen", "Kaarikatu 3 B 1", "04567", crepository.findByName("Tuusula").get(0)));
+			repository.save(new Address("Heikki", "Heikkilä", "Viestitie 4 B", "56789", crepository.findByName("Lappeenranta").get(0)));
+			repository.save(new Address("Liisa", "Järvinen", "Ilveskuja 8", "23456", crepository.findByName("Turku").get(0)));
+			repository.save(new Address("Kalle", "Kolkuttaja", "Mäkikumpu 6", "90123", crepository.findByName("Oulu").get(0)));
+			repository.save(new Address("Kaija", "Korpi", "Riihikatu 18", "00134", crepository.findByName("Helsinki").get(0)));
+			repository.save(new Address("Pekka", "Peloton", "Tinatie 4 A 19", "00123", crepository.findByName("Helsinki").get(0)));
+			repository.save(new Address("Alisa", "Alatalo", "Oksapolku 1 D", "05678", crepository.findByName("Tuusula").get(0)));
+			repository.save(new Address("Elli", "Pekkala", "Vinttikuja 6", "01234", crepository.findByName("Vantaa").get(0)));
+			repository.save(new Address("Lasse", "Sahamies", "Päätypolku 5 F", "91234", crepository.findByName("Oulu").get(0)));
+			
 			log.info("all addresses");
 			for (Address address : repository.findAll()) {
 				log.info(address.toString());
