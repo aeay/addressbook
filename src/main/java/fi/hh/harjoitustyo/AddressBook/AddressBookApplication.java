@@ -28,6 +28,7 @@ public class AddressBookApplication {
 	public CommandLineRunner addressDemo(AddressRepository repository, CityRepository crepository, UserRepository urepository) {
 		return (args) -> {
 			log.info("cities");
+			crepository.save(new City(" "));
 			crepository.save(new City("Helsinki"));
 			crepository.save(new City("Vantaa"));
 			crepository.save(new City("Tuusula"));

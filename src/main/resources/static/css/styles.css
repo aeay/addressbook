@@ -1,0 +1,90 @@
+@CHARSET "UTF-8";
+
+.flex-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  
+}
+
+body{
+	font-family: Raleway;	
+}
+
+.header {
+	width: 100%;
+	text-align: center;
+	background-color: black;
+	color: white;
+	font-family: Galada;
+	letter-spacing: 5px;
+	font-size: 30px;
+	height: 130px;
+}
+
+.user {
+	display: flex;
+	flex-direction: row;
+	width: 100%;
+	text-align: center;
+	background-color: black;
+	color: white;
+	font-family: Raleway;
+	letter-spacing: 2px;
+	font-size: 20px;
+	height: 50px;
+	justify-content: center;
+	align-items: center;
+	}
+	
+.content{
+	display: flex;
+	flex-direction: row;
+}
+	
+th {
+    padding: 10px;
+    text-align: left;
+    background-color: #002db3;
+    color: white;
+    font-family:Raleway;
+}
+
+td {
+	padding: 10px;
+    text-align: left;
+    font-family:Raleway;
+    
+}
+
+tr:nth-child(even) {
+	background-color: #e6ecff;
+	}
+	
+a {
+	margin-top:15px; 
+	margin-left:15px;
+	padding: 5px;
+	font-family: Raleway;
+	text-decoration: none;
+	color: black;
+	font-weight: bold;
+	font-size: 20px;
+}
+
+label {
+	font-family: Raleway;
+}
+
+input {
+	font-family: Raleway;
+	font-weight: bold;
+	font-size: 20px;
+}
+
+.button {
+	background-color: black;
+	color: white;
+}

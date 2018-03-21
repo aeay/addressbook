@@ -1,6 +1,7 @@
 package fi.hh.harjoitustyo.AddressBook.web;
 
 import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -70,6 +71,5 @@ public class AddressController {
 		public @ResponseBody Address findAddressRest(@PathVariable("id") Long addressId) {
 			return repository.findOne(addressId);
 		}
-	
 
 }

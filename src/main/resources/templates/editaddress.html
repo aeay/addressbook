@@ -2,9 +2,23 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<title>Insert title here</title>
+<link type="text/css" rel="stylesheet" href="/css/styles.css" th:href="@{/css/styles.css}" />
+<link href='https://fonts.googleapis.com/css?family=Galada' rel='stylesheet' />
+<link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' />
+<link rel="icon" href="https://cdn3.iconfinder.com/data/icons/business-8/512/E-mail-512.png" />
+<title>MyAddressBook</title>
 </head>
 <body>
+	<div class="flex-container">
+		<div class="header">
+			<h1>&#9734; MyAddressBook &#9734;</h1>
+		</div>
+		<div class="user">
+			<h3 th:inline="text" style="padding-right:20px">Welcome [[${#httpServletRequest.remoteUser}]]</h3>
+			<form th:action="@{/logout}" method="post">
+				<input class="button" type="submit" value="Sign Out"/>
+			</form>
+		</div>
 	<h1>Edit address</h1>
 	<form th:object="${address}" th:action="@{/save}" action="#" method="post">
 		<input type="hidden" id="id" th:field="*{id}" />
@@ -24,8 +38,8 @@
 		<select id="citylist" th:field="*{city}">
        			<option th:each="city: ${cities}" th:value="${city.cityid}" th:text="${city.name}"></option>
     	</select>
-    	<br />
-		<input type="submit" value="Save"></input>
+		<input class="button" type="submit" value="Save"></input>
 	</form>
+	</div>
 </body>
 </html>
