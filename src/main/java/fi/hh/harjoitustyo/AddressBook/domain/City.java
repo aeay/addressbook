@@ -6,6 +6,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import javax.validation.constraints.NotNull;
 
 @Entity
 public class City {
@@ -13,6 +14,8 @@ public class City {
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private Long cityid;
+	
+	@NotNull
 	private String name;
 	
 	@OneToMany

@@ -22,16 +22,20 @@
 	<h1>New address:</h1>
 	<form th:object="${address}" th:action="@{save}" action="#" method="post">
 		<label for="firstName">First name:</label>
-		<input type="text" id="firstName" th:field="*{firstName}"/>
+		<input type="text" id="firstName" th:field="*{firstName}" />
+		<label th:if="${#fields.hasErrors('firstName')}" th:errors="*{firstName}">Please give first name</label>
 		<br />
 		<label for="lastName">Last name:</label>
 		<input type="text" id="lastName" th:field="*{lastName}" />
+		<label th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}">Please give last name</label>
 		<br />
 		<label for="street">Street:</label>
 		<input type="text" id="street" th:field="*{street}" />
+		<label th:if="${#fields.hasErrors('street')}" th:errors="*{street}">Please give street address</label>
 		<br/>
 		<label for="postalCode">Postal Code:</label>
 		<input type="text" id="postalCode" th:field="*{postalCode}" />
+		<label th:if="${#fields.hasErrors('postalCode')}" th:errors="*{postalCode}">Please give postal code</label>
 		<br />
 		<label for="city">City:</label>
 		<select id="citylist" th:field="*{city}" class="form-control">

@@ -1,6 +1,7 @@
 package fi.hh.harjoitustyo.AddressBook.domain;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 
 @Entity
 public class User {
@@ -11,15 +12,19 @@ public class User {
 	private Long id;
     
     @Column(name = "username", nullable = false, unique = true)
+    @NotNull
     private String username;
     
     @Column(name = "password", nullable = false)
+    @NotNull
 	private String passwordHash;
     
     @Column(name = "email", nullable = false)
+    @NotNull
 	private String email;
     
     @Column(name = "role", nullable = false)
+    @NotNull
 	private String role;
 
 	public Long getId() {
