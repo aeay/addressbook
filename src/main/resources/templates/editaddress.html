@@ -38,6 +38,10 @@
 		<select id="citylist" th:field="*{city}">
        			<option th:each="city: ${cities}" th:value="${city.cityid}" th:text="${city.name}"></option>
     	</select>
+    	<br/>
+		<label for="phone">Phone number:</label>
+		<input type="text" id="phone" th:field="*{phone}" />
+		<br />
 		<input class="button" type="submit" value="Save"></input>
 	</form>
 	</div>

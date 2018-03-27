@@ -34,6 +34,8 @@ public class Address {
 	@JsonIgnore
 	@JoinColumn(name = "cityid")
 	private City city;
+	
+	private String phone;
 
 	public Long getId() {
 		return id;
@@ -82,14 +84,22 @@ public class Address {
 	public void setCity(City city) {
 		this.city = city;
 	}
+	
+	public String getPhone() {
+		return phone;
+	}
+
+	public void setPhone(String phone) {
+		this.phone = phone;
+	}
 
 	@Override
 	public String toString() {
 		return "Address [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", street=" + street
-				+ ", postalCode=" + postalCode + ", city=" + city + "]";
+				+ ", postalCode=" + postalCode + ", city=" + city + ", phone=" + phone + "]";
 	}
 
-	public Address(Long id, String firstName, String lastName, String street, String postalCode, City city) {
+	public Address(Long id, String firstName, String lastName, String street, String postalCode, City city, String phone) {
 		super();
 		this.id = id;
 		this.firstName = firstName;
@@ -97,9 +107,10 @@ public class Address {
 		this.street = street;
 		this.postalCode = postalCode;
 		this.city = city;
+		this.phone = phone;
 	}
 	
-	public Address(String firstName, String lastName, String street, String postalCode, City city) {
+	public Address(String firstName, String lastName, String street, String postalCode, City city, String phone) {
 		super();
 		this.id = null;
 		this.firstName = firstName;
@@ -107,6 +118,7 @@ public class Address {
 		this.street = street;
 		this.postalCode = postalCode;
 		this.city = city;
+		this.phone = phone;
 	}
 	
 	public Address() {
@@ -117,6 +129,7 @@ public class Address {
 		this.street = null;
 		this.postalCode = null;
 		this.city = null;
+		this.phone = null;
 	}
 
 
